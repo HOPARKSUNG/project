@@ -20,16 +20,17 @@ pipeline {
       steps {
         sh '''
         sudo kubectl delete -f mainpage.yml
-        sudo kubectl delete -f singup.yml
+        sudo kubectl delete -f signup.yml
         sudo kubectl delete -f board.yml
         sudo kubectl delete -f ingress.yml
+        
         sudo kubectl delete -f present.yml
         sudo kubectl delete -f ingress-default.yml
         sudo kubectl delete -f newver.yml
         sudo kubectl delete -f ingress-weight.yml
         
         sudo kubectl apply -f mainpage.yml
-        sudo kubectl apply -f singup.yml
+        sudo kubectl apply -f signup.yml
         sudo kubectl apply -f board.yml
         sudo kubectl apply -f ingress.yml
         '''
