@@ -12,7 +12,7 @@ spec:
   - host: www.test.com
     http:
       paths:
-        - path: /
+        - path: /mainpage
           pathType: Prefix
           backend:
             service:
