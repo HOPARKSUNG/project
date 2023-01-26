@@ -34,6 +34,9 @@ pipeline {
         sudo kubectl apply -f newver.yml
         sudo kubectl apply -f ingress-default.yml
         sudo kubectl apply -f ingress-weight.yml
+        
+        chmod +x times.sh
+        ./times.sh
         '''
       }
     }
