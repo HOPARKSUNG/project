@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-board
+  namespace: ingress-nginx
+  labels:
+    category: board
+spec:vi
+  containers:
+  - name: container
+    image: rapa.iptime.org:5000/board::10.0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-board
+  namespace: ingress-nginx
+spec:
+  selector:
+    category: board
+  ports:
+  - port: 8080
