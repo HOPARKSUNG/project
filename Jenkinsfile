@@ -32,6 +32,7 @@ pipeline {
         
         sudo kubectl apply -f present.yml
         sudo kubectl apply -f newver.yml
+        sudo kubectl apply -f ingress-default.yml
         sudo kubectl apply -f ingress-weight.yml
         '''
       }
