@@ -19,10 +19,10 @@ pipeline {
     stage('deploy k8s') {
       steps {
         sh '''
+        sudo kubectl apply -f ingress.yml
         sudo kubectl apply -f mainpage.yml
         sudo kubectl apply -f signup.yml
         sudo kubectl apply -f board.yml
-        sudo kubectl apply -f ingress.yml
         '''
       }
     }
