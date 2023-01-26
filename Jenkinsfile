@@ -9,8 +9,12 @@ pipeline {
     stage('docker build') {
       steps {
         sh '''
-        sudo docker pull rapa.iptime.org:5000/ipnginx:sunghotest
-        sudo docker pull rapa.iptime.org:5000/hnginx:sunghotest
+        sudo docker build -t rapa.iptime.org:5000/mainpage:1.0 .
+        sudo docker push rapa.iptime.org:5000/mainpage:10.0
+        sudo docker build -t rapa.iptime.org:5000/signup:1.0 .
+        sudo docker push rapa.iptime.org:5000/signup:10.0
+        sudo docker build -t rapa.iptime.org:5000/board::1.0 .
+        sudo docker push rapa.iptime.org:5000/board::10.0
         '''
       }
     }
@@ -18,10 +22,19 @@ pipeline {
     stage('deploy k8s') {
       steps {
         sh '''
+        sudo kubectl delete -f mainpage.yml
+        sudo kubectl delete -f singup.yml
+        sudo kubectl delete -f board.yml
+        sudo kubectl delete -f ingress.yml
         sudo kubectl delete -f present.yml
         sudo kubectl delete -f ingress-default.yml
         sudo kubectl delete -f newver.yml
         sudo kubectl delete -f ingress-weight.yml
+        
+        sudo kubectl apply -f mainpage.yml
+        sudo kubectl apply -f singup.yml
+        sudo kubectl apply -f board.yml
+        sudo kubectl apply -f ingress.yml
         sudo kubectl apply -f present.yml
         sudo kubectl apply -f ingress-default.yml
         sudo kubectl apply -f newver.yml
