@@ -15,18 +15,18 @@ spec:
             service:
               name: svc-mainpage
               port:
-                number: 8080
+                number: 80
         - path: /signup
           pathType: Prefix
           backend:
             service:
               name: svc-signup
               port:
-                number: 8080
+                number: 80
         - path: /board
           pathType: Prefix
           backend:
             service:
               name: svc-board
               port:
-                number: 8080
+                number: 80
