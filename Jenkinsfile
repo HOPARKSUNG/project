@@ -29,6 +29,10 @@ pipeline {
         sudo kubectl apply -f signup.yml
         sudo kubectl apply -f board.yml
         sudo kubectl apply -f ingress2.yml
+        
+        sudo kubectl apply -f present.yml
+        sudo kubectl apply -f newver.yml
+        sudo kubectl apply -f ingress-weight.yml
         '''
       }
     }
