@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: service-loadbalancing
+  namespace: ingress-nginx
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: www.test.com
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: svc-mainpage
+              port:
+                number: 8080
+        - path: /signup
+          pathType: Prefix
+          backend:
+            service:
+              name: svc-signup
+              port:
+                number: 8080
+        - path: /board
+          pathType: Prefix
+          backend:
+            service:
+              name: svc-board
+              port:
+                number: 8080
