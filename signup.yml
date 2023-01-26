@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-signup
+  namespace: ingress-nginx
+  labels:
+    category: signup
+spec:
+  containers:
+  - name: container
+    image: rapa.iptime.org:5000/signup:10.0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-signup
+  namespace: ingress-nginx
+spec:
+  selector:
+    category: signup
+  ports:
+  - port: 8080
