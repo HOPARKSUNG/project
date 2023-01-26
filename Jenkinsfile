@@ -9,9 +9,9 @@ pipeline {
     stage('docker build') {
       steps {
         sh '''
-        sudo docker pull rapa.iptime.org:5000/mainpage
-        sudo docker pull rapa.iptime.org:5000/signup
-        sudo docker pull rapa.iptime.org:5000/board
+        sudo docker pull rapa.iptime.org:5000/mainpage:1.0
+        sudo docker pull rapa.iptime.org:5000/signup:1.0
+        sudo docker pull rapa.iptime.org:5000/board:1.0
         '''
       }
     }
