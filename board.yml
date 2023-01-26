@@ -5,7 +5,7 @@ metadata:
   namespace: ingress-nginx
   labels:
     category: board
-spec:vi
+spec:
   containers:
   - name: container
     image: board:1.0
