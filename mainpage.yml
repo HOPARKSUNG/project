@@ -19,4 +19,4 @@ spec:
   selector:
     category: mainpage
   ports:
-  - port: 8080
+  - port: 80
