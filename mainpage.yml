@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-mainpage
+  namespace: ingress-nginx
+  labels:
+    category: mainpage
+spec:
+  containers:
+  - name: container
+    image: rapa.iptime.org:5000/mainpage:10.0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-mainpage
+  namespace: ingress-nginx
+spec:
+  selector:
+    category: mainpage
+  ports:
+  - port: 8080
