@@ -9,11 +9,11 @@ pipeline {
     stage('docker build') {
       steps {
         sh '''
-        sudo docker build -t rapa.iptime.org:5000/mainpage:1.0 .
+        sudo docker build -t rapa.iptime.org:5000/mainpage:1.0 -f Dockerfile-main .
         sudo docker push rapa.iptime.org:5000/mainpage:10.0
-        sudo docker build -t rapa.iptime.org:5000/signup:1.0 .
+        sudo docker build -t rapa.iptime.org:5000/signup:1.0 -f Dockerfile-signup .
         sudo docker push rapa.iptime.org:5000/signup:10.0
-        sudo docker build -t rapa.iptime.org:5000/board::1.0 .
+        sudo docker build -t rapa.iptime.org:5000/board::1.0 -f Dockerfile-board .
         sudo docker push rapa.iptime.org:5000/board::10.0
         '''
       }
