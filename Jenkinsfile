@@ -19,10 +19,6 @@ pipeline {
     stage('deploy k8s') {
       steps {
         sh '''
-        sudo kubectl delete -f ingress.yml
-        sudo kubectl delete -f mainpage.yml
-        sudo kubectl delete -f signup.yml
-        sudo kubectl delete -f board.yml
         
         sudo kubectl apply -f ingress.yml
         sudo kubectl apply -f mainpage.yml
