@@ -13,21 +13,21 @@ spec:
     http:
       paths:
         - pathType: Prefix
-          path: /
+          path: "/"
           backend:
             service:
               name: svc-mainpage
               port:
                 number: 80
         - pathType: Prefix
-          path: /signup
+          path: "/signup"
           backend:
             service:
               name: svc-signup
               port:
                 number: 80
         - pathType: Prefix
-          path: /board
+          path: "/board"
           backend:
             service:
               name: svc-board
