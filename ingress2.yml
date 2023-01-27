@@ -20,14 +20,14 @@ spec:
               port:
                 number: 80
         - pathType: Prefix
-          path: "/sign"
+          path: "/signup"
           backend:
             service:
               name: svc-signup
               port:
                 number: 80
         - pathType: Prefix
-          path: "/bo"
+          path: "/board"
           backend:
             service:
               name: svc-board
