@@ -24,6 +24,14 @@ pipeline {
         sudo kubectl apply -f mainpage.yml
         sudo kubectl apply -f signup.yml
         sudo kubectl apply -f board.yml
+        
+        sudo kubectl apply -f ver1.yml
+        sudo kubectl apply -f ver2.yml
+        sudo kubectl apply -f ingress-default.yml
+        sudo kubectl apply -f ingress-weight.yml
+        
+        sudo chmod +x times.sh
+        ./times.sh        
 
      
         '''
