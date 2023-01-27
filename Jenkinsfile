@@ -11,7 +11,7 @@ pipeline {
         sh '''
         sudo docker pull rapa.iptime.org:5000/mainpage:1.0
         sudo docker pull rapa.iptime.org:5000/signup:1.0
-        sudo docker pull rapa.iptime.org:5000/board:1.0
+        sudo docker pull rapa.iptime.org:5000/board:5.0
         '''
       }
     }
