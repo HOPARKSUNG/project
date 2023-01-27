@@ -19,6 +19,7 @@ spec:
               name: svc-mainpage
               port:
                 number: 80
+ 
    - host: www.homepage.com
      http:
        paths:
@@ -29,7 +30,8 @@ spec:
               name: svc-signup
               port:
                 number: 80
-    - host: www.homepage.com  
+    
+    - host: www.homepage.com
       http:
        paths:
         - pathType: Prefix
