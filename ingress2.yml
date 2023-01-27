@@ -5,29 +5,29 @@ metadata:
   namespace: ingress-nginx
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-   #kubernetes.io/ingress.class: "nginx"
+    kubernetes.io/ingress.class: "nginx"
 spec:
 # ingressClassName: nginx
   rules:
   - host: www.homepage.com
     http:
       paths:
-        - path: /
-          pathType: Prefix
+        - pathType: Prefix
+          path: /
           backend:
             service:
               name: svc-mainpage
               port:
                 number: 80
-        - path: /signup
-          pathType: Prefix
+        - pathType: Prefix
+          path: /signup
           backend:
             service:
               name: svc-signup
               port:
                 number: 80
-        - path: /board
-          pathType: Prefix
+        - pathType: Prefix
+          path: /board
           backend:
             service:
               name: svc-board
