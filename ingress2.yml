@@ -19,23 +19,15 @@ spec:
               name: svc-mainpage
               port:
                 number: 80
- 
-   - host: www.homepage.com
-     http:
-       paths:
         - pathType: Prefix
-          path: "/signup"
+          path: "/sign"
           backend:
             service:
               name: svc-signup
               port:
                 number: 80
-    
-    - host: www.homepage.com
-      http:
-       paths:
         - pathType: Prefix
-          path: "/board"
+          path: "/bo"
           backend:
             service:
               name: svc-board
